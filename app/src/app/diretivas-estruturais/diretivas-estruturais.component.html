@@ -1,0 +1,30 @@
+<p *ngIf="condition; else elseBlock">true</p>
+<ng-template #elseBlock>
+  <p>false</p>
+</ng-template>
+
+<hr>
+
+<p *ngIf="conditionClick">True</p>
+<p *ngIf="!conditionClick">false</p>
+
+<button (click)="onClick()">clicar</button>
+<button (click)="onClickAddList()">Click add</button>
+<button (click)="onClickRemoveList()">Click remove</button>
+<ul>
+  <li *ngFor="let obj of array let i = index;" (click)="onClickEventListener(i)">
+    <a>[{{i+1}}].{{obj.nome}}</a>
+  </li>
+</ul>
+
+
+<hr>
+
+<input type="text" [(ngModel)]="nome">
+<div [ngSwitch]="nome">
+
+  <p *ngSwitchCase="'Gabriel'">Gabriel</p>
+  <p *ngSwitchCase="'Lucas'">Lucas</p>
+  <p *ngSwitchCase="'Souza'">Souza</p>
+  <p *ngSwitchDefault>busca mal sucedida</p>
+</div>
