@@ -4,7 +4,14 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-root',
   //templateUrl: 'app.component.html',
   template: `
-    <app-diretivas-atributos> </app-diretivas-atributos>
+    <app-new-component></app-new-component>
+    <app-input [contador]="addValue"></app-input>
+    <button (click)="add()">add</button>
+    <ng-template [ngIf]="getDados">
+      <h1>{{ getDados.nome }}</h1>
+      <h2>{{ getDados.idade }}</h2></ng-template
+    >
+    <app-output (enviarDados)="setDados($event)"></app-output>
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss']
@@ -14,9 +21,19 @@ export class AppComponent implements OnInit {
   //public title = 'ps-app';
   public destruir: boolean = true;
   public valor: number = 1;
+  public addValue: number = 0;
+  public getDados: { nome: string; idade: number } | undefined;
   //@Input() public title: string = 'Bem vindo';
   constructor() {
     //É chamado assim que é iniciado. É o primeiro passo do ciclo de vida do angular
+  }
+
+  public setDados(event: { nome: string; idade: number }): void {
+    this.getDados = event;
+  }
+
+  public add(): void {
+    this.addValue += 1;
   }
 
   public adicionar(): number {

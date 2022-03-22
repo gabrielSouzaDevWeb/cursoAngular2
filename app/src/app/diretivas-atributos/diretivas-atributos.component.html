@@ -1,7 +1,24 @@
-<!-- <p [ngClass]="{'active':valor,'disable':!valor}">NgClass</p>
-<p [ngStyle]="{'height': heightPx,'background': backgroundColor }">ngStyle</p><br> -->
+<!-- <ng-content select="h1"></ng-content>
+<p [ngClass]="{'active':valor,'disable':!valor}">NgClass</p>
+<p [ngStyle]="{'height': heightPx,'background': backgroundColor }">ngStyle</p><br>
 <hr><br>
 <input type="text" placeholder='nome' [(ngModel)]="nome">
-<button (click)="salvar()">Adicionar nome</button><br>
+<button (click)="salvar()">Adicionar nome</button><button (click)="deleteLast()">apagar último</button><button
+  (click)="deleteAll()">apagar todos</button><br>
+<ol>
+  <ng-content select="li"></ng-content>
+</ol>
 <span>{{nome}}</span>
 <li *ngFor="let item of list">{{item.nome}}</li>
+<ng-template ngFor let-item [ngForOf]="list">
+  <p>
+    {{item.nome}}
+  </p>
+</ng-template>
+<ng-content select="hr"></ng-content> -->
+<input type="text" placeholder='nome' [(ngModel)]="nome">
+<button (click)="salvar()">Adicionar nome</button>
+<ul>
+  <li *ngIf="nome != ''">{{nome | uppercase}}</li>
+  <li *ngFor="let item of list">{{item.nome | uppercase}} &nbsp; {{date | date: 'hh:mm:ss dd/MM/yyyy'}}</li>
+</ul>

@@ -9,17 +9,26 @@ export class DiretivasAtributosComponent implements OnInit {
   public valor: boolean = true;
   public heightPx: string = '20px';
   public backgroundColor: string = '#de2222';
+  public date: Date = new Date();
 
   public nome: string = '';
-  public list: Array<{ nome: string }> = [];
+  public list: Array<{ nome: string }> = [{ nome: 'Gabriel Lucas de Souza' }];
 
   constructor() {}
 
   public salvar(): void {
     this.nome === ''
       ? alert('o nome não pode estar vazio')
-      : this.list.push({ nome: this.nome });
+      : this.list.unshift({ nome: this.nome });
     this.nome = '';
+  }
+
+  public deleteLast(): void {
+    this.list.pop();
+  }
+
+  public deleteAll(): void {
+    this.list = [];
   }
 
   ngOnInit(): void {
