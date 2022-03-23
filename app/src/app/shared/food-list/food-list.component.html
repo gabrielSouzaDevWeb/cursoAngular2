@@ -1,0 +1,5 @@
+<ol>
+  <li *ngFor="let item of foodList;">&nbsp;{{item.nome}}
+    <button (click)="deleteFoodList(item)">Deletar</button>
+  </li>
+</ol>
