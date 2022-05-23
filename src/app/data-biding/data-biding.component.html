@@ -1,27 +1,37 @@
-<!-- <h1>{{nome}}</h1>
+<h1>{{nome}}</h1>
 <h2>{{idade}} anos</h2>
 <p>{{nome}} tem mais de 20 anos?</p>
 <p>{{idade > 20}}</p>
 
 <p>Quanto é {{idade}} mais {{maisUm}}?</p>
-<p>{{idade + maisUm}}</p> <hr> -->
+<p>{{idade + maisUm}}</p>
+<hr>
 
 
 
-<!-- <h2>Property Binding</h2>
+<h2>Property Binding</h2>
 <button [disabled]="checkDisable">Button</button><br>
 <h1></h1>
-<img [src]="imgSrc" [alt]="imgTitle" [title]="imgTitle"> -->
+<img [src]="imgSrc" [alt]="imgTitle" [title]="imgTitle">
 
 
 
-<!-- <h2>Event Binding</h2>
+<h2>Event Binding</h2>
 <button (click)="alertaInfo($event)">Evento</button>
+
+<h2>two-way Binding</h2>
+<input #name [(ngModel)]="nome">
+
+<button aria-placeholder="[placeholder]" [textContent]="click" (click)="saveName(name)"></button>
+<ng-template font-sans [ngIf]="nome">
+  <hr>{{name.value}}
+  <hr>
+</ng-template>
+<hr *ngIf="names[0] && !nome">
+<ng-template ngFor let-name [ngForOf]="names" let-i="index">
+  <span>{{i+1}} - {{name}}</span><br>
+</ng-template>
 <div (mousemove)="mouseMoveTeste($event)" style="background-color: #fed;width: 20vw;height: 20vh; margin-top:2em ;">
 </div>
 
-{{position.x}} - {{position.y}} -->
-
-<h2>two-way Binding</h2>
-<input [(ngModel)]="nome">
-{{nome}}
+{{position.x}} - {{position.y}}

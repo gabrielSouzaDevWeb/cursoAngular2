@@ -1,6 +1,6 @@
-import { IFoodList } from './../interfaces/food-list.interface';
+import { IFoodList } from '../../interfaces/food-list.interface';
 import { Observable } from 'rxjs';
-import { FoodListService } from './../service/food-list.service';
+import { FoodListService } from '../../service/food-list.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

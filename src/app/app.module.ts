@@ -19,7 +19,13 @@ import { DiretivasAtributosComponent } from './diretivas-atributos/diretivas-atr
     DiretivasEstruturaisComponent,
     DiretivasAtributosComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, SharedModule],
+  imports: [
+    SharedModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    SharedModule
+  ],
   exports: [],
   providers: [],
   bootstrap: [AppComponent]

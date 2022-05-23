@@ -1,11 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { OnInit, Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   //templateUrl: 'app.component.html',
   template: `
-    <app-food-list></app-food-list>
-    <app-food-add></app-food-add>
+    <ng-template [ngIf]="getDados">
+      <h1>
+        <h1>{{ getDados.nome }}</h1>
+        {{ getDados.idade }}
+      </h1></ng-template
+    >
+    <app-output (enviarDados)="setDados($event)"></app-output>
+    <!-- <button (click)="add()" [textContent]="addValue"> -->
+    <!-- <app-food-add></app-food-add>
+    <app-data-biding></app-data-biding> -->
+    <!-- <app-food-list></app-food-list>
+    <app-food-add></app-food-add> -->
     <!--<app-new-component></app-new-component>
     <app-input [contador]="addValue"></app-input>
     <button (click)="add()">add</button>
@@ -21,9 +31,10 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   //ciclos de vida de uma aplicação angular
   //public title = 'ps-app';
+
   public destruir: boolean = true;
   public valor: number = 1;
-  public addValue: number = 0;
+  public addValue: number = 546;
   public getDados: { nome: string; idade: number } | undefined;
   //@Input() public title: string = 'Bem vindo';
   constructor() {
