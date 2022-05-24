@@ -4,14 +4,15 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-root',
   //templateUrl: 'app.component.html',
   template: `
-    <app-new-component></app-new-component>
+    <!-- <app-new-component></app-new-component>
     <app-input [contador]="addValue"></app-input>
     <button (click)="add()">add</button>
     <ng-template [ngIf]="getDados">
       <h1>{{ getDados.nome }}</h1>
       <h2>{{ getDados.idade }}</h2></ng-template
     >
-    <app-output (enviarDados)="setDados($event)"></app-output>
+    <app-output (enviarDados)="setDados($event)"></app-output> -->
+    <app-food-list></app-food-list>
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss']
