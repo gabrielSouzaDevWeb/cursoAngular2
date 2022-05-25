@@ -1,0 +1,75 @@
+<form #form="ngForm" (ngSubmit)="submitForm(form)" action="">
+  <label for="name">
+    Nome:
+    <input required type="text" name="nome" #nome="ngModel" [ngModel]="nome.value" id="name" ngModel><br>
+    <span *ngIf="(!nome.valid && nome.touched)" style="margin-left:50px;font-size: 12px;color: red;">Campo obrigatorio,
+      preencher!</span>
+  </label>
+  <br>
+  <br>
+  <br>
+  <!-- {{form.valid}} -->
+
+  {{nome.valid}}
+  {{nome.dirty}}
+  {{nome.touched}}
+  <br>
+  <br>
+  <br>
+  <label for="masc">
+    Masculino:
+    <input type="radio" required name="sexo" value="masculino" id="masc" ngModel>
+  </label>
+  <br>
+  <br>
+  <label for="fem">
+    feminino:
+    <input type="radio" name="sexo" value="feminino" id="fem" ngModel>
+  </label>
+  <br>
+  <br>
+  <label for="outros">
+    outros:
+    <input type="radio" name="sexo" value="outros" id="outros" ngModel>
+  </label>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <label for="angular">
+    Angular:
+    <input type="checkbox" name="angular" value="angular" id="tec" ngModel>
+  </label>
+  <br>
+  <br>
+  <label for="vue">
+    Vue:
+    <input type="checkbox" name="vue" value="vue" id="tec" ngModel>
+  </label>
+  <br>
+  <br>
+  <label for="react">
+    React:
+    <input type="checkbox" name="react" value="react" id="tec" ngModel>
+  </label>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <select required name="comidas" ngModel>
+    <option value="">Selecione um lanche</option>
+    <ng-template ngFor let-item [ngForOf]="listComida">
+      <option [ngValue]="item">{{item.comida}}, preço: R${{item.preco}}</option>
+    </ng-template>
+  </select>
+
+  <br>
+  <br>
+  <button [disabled]="form.invalid">Enviar dados</button>
+</form>
+<br>
+<br>
+
+{{form.value |json}}

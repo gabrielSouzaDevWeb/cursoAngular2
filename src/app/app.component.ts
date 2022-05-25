@@ -4,13 +4,14 @@ import { OnInit, Component } from '@angular/core';
   selector: 'app-root',
   //templateUrl: 'app.component.html',
   template: `
-    <ng-template [ngIf]="getDados">
-      <h1>
-        <h1>{{ getDados.nome }}</h1>
-        {{ getDados.idade }}
-      </h1></ng-template
-    >
-    <app-output (enviarDados)="setDados($event)"></app-output>
+    <app-forms></app-forms>
+    <!-- <ng-template [ngIf]="getDados">
+        <h1>
+          <h1>{{ getDados.nome }}</h1>
+          {{ getDados.idade }}
+        </h1></ng-template
+      >
+      <app-output (enviarDados)="setDados($event)"></app-output> -->
     <!-- <button (click)="add()" [textContent]="addValue"> -->
     <!-- <app-food-add></app-food-add>
     <app-data-biding></app-data-biding> -->
