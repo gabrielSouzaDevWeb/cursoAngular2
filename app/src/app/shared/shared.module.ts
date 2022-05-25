@@ -13,7 +13,7 @@ import { FoodAddComponent } from './food-add/food-add.component';
     InputComponent,
     OutputComponent,
     FoodAddComponent,
-    FoodListComponent
+    FoodListComponent,
   ],
   imports: [CommonModule],
   exports: [
@@ -21,8 +21,8 @@ import { FoodAddComponent } from './food-add/food-add.component';
     InputComponent,
     OutputComponent,
     FoodAddComponent,
-    FoodListComponent
+    FoodListComponent,
   ],
-  providers: [FoodListService]
+  providers: [FoodListService],
 })
 export class SharedModule {}

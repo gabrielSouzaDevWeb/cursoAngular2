@@ -12,10 +12,11 @@ import { Component, OnInit } from '@angular/core';
       <h2>{{ getDados.idade }}</h2></ng-template
     >
     <app-output (enviarDados)="setDados($event)"></app-output> -->
+    <app-food-add></app-food-add>
     <app-food-list></app-food-list>
     <router-outlet></router-outlet>
   `,
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   //ciclos de vida de uma aplicação angular
